@@ -63,3 +63,18 @@
 .pad {
   padding: 3rem 5rem;
 }
+
+@media (max-width: 768px) {
+  .pad {
+    padding: 2rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .inputs input:first-of-type {
+    width: auto;
+  }
+
+}

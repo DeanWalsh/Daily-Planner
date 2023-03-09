@@ -20,8 +20,20 @@
   
   .task-container .task-name {
     width: 200%;
+    max-width: 380px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     border-right: #2a2d34 1px solid;
+  }
+
+
+  @media (max-width: 768px) {
+    
+    .App .daily-tasks .task {
+      width: 80vw;
+    }
+    .daily-tasks .task-container {
+      width: 80%;
+    }
   }
