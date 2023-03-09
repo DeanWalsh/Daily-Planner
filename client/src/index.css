@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: #2a2d34;
-  background-color: #2a2d34;
+  background-color: #1f2940;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -43,7 +43,7 @@ h1 {
 button {
   border-radius: 8px;
   border: none;
-  outline: 3px solid transparent;
+  outline: 2px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -56,7 +56,7 @@ button:hover,
 button:focus,
 button:focus-visible {
   transition: all 0.1s linear;
-  outline: 3px #32446c solid;
+  outline: 2px #32446c solid;
   background-color: #d1d8eb;
   color: #32446c;
 }
