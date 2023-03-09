@@ -24,9 +24,11 @@ function App() {
 
   const addTask = (): void => {
     const newTask = { id: keyId.current++, taskName: task, time: time };
+    if(task != "") {
     setDaily([...daily, newTask]);
     setTask("");
     setTime("00:00");
+    }
   };
 
   const deleteTask = (taskId: number): void => {
