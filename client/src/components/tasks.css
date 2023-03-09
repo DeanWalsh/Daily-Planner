@@ -1,0 +1,27 @@
+.daily-tasks .task {
+    display: flex;
+    width: auto;
+    padding: 1rem;
+    background-color: #d1d8eb;
+  }
+  
+  .task-container {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .task-container span {
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding-top: 5px;
+  }
+  
+  .task-container .task-name {
+    width: 200%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-right: #2a2d34 1px solid;
+  }
