@@ -142,6 +142,7 @@ function App() {
           </div>
         </div>
       )}
+      <audio src="../audio/EntertheArena.mp3" controls></audio>
     </div>
   );
 }
