@@ -28,18 +28,19 @@ function App() {
   };
 
   const addTask = (): void => {
+    if (!task.trim()) {
+      return;
+    }
     const newTask = {
       id: keyId.current++,
-      taskName: task,
-      taskDescription: description,
+      taskName: task.trim(),
+      taskDescription: description.trim(),
       time: time,
     };
-    if (task != "") {
       setDaily([...daily, newTask]);
       setTask("");
       setDescription("");
       setTime("00:00");
-    }
   };
 
   const deleteTask = (taskId: number): void => {
