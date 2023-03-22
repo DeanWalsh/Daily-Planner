@@ -166,6 +166,14 @@ button:focus-visible {
   word-break: break-all;
 }
 
+.modal-content span {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
 .modal button {
   position: absolute;
   top: 10px;

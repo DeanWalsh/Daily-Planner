@@ -131,6 +131,7 @@ function App() {
             <div className="modal-content">
               <h2>{selectedTask.taskName}</h2>
               <p>{selectedTask.taskDescription}</p>
+              <span>{selectedTask.time}</span>
             </div>
           </div>
         </div>
