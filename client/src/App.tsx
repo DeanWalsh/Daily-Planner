@@ -19,12 +19,13 @@ function App() {
 
   // Event handler function that updates the state variables when the user types into the form.
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-    if (event.target.name === "task") {
-      setTask(event.target.value);
-    } else if (event.target.name === "description") {
-      setDescription(event.target.value);
+    const { name, value } = event.target;
+    if (name === "task") {
+      setTask(value);
+    } else if (name === "description") {
+      setDescription(value);
     } else {
-      setTime(event.target.value);
+      setTime(value);
     }
   };
 
@@ -39,10 +40,10 @@ function App() {
       taskDescription: description.trim(),
       time: time,
     };
-      setDaily([...daily, newTask]);
-      setTask("");
-      setDescription("");
-      setTime("00:00");
+    setDaily([...daily, newTask]);
+    setTask("");
+    setDescription("");
+    setTime("00:00");
   };
 
   // Event handler function that deletes a task from the task list when the user clicks the delete button.
@@ -50,7 +51,7 @@ function App() {
     setDaily((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
-// TODO: Add editTask function to edit a task in the task list.
+  // TODO: Add editTask function to edit a task in the task list.
 
   // Event handler function that selects a task in the task list when the user clicks on it.
   const handleTaskClick = (
