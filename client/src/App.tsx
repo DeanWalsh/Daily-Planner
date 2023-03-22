@@ -17,6 +17,7 @@ function App() {
   const [selectedTask, setSelectedTask] = useState<ITask | null>(null);
   const keyId = useRef<number>(0);
 
+  // Event handler function that updates the state variables when the user types into the form.
   const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
     if (event.target.name === "task") {
       setTask(event.target.value);
@@ -27,6 +28,7 @@ function App() {
     }
   };
 
+  // Event handler function that adds a new task to the task list when the user clicks the "Add Task" button.
   const addTask = (): void => {
     if (!task.trim()) {
       return;
@@ -43,12 +45,14 @@ function App() {
       setTime("00:00");
   };
 
+  // Event handler function that deletes a task from the task list when the user clicks the delete button.
   const deleteTask = (taskId: number): void => {
     setDaily((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
-  // Add edit feature: const editTask = (taskNameEdit: undefined): void => {}
+// TODO: Add editTask function to edit a task in the task list.
 
+  // Event handler function that selects a task in the task list when the user clicks on it.
   const handleTaskClick = (
     taskId: number,
     e: React.MouseEvent<HTMLDivElement>
@@ -62,26 +66,14 @@ function App() {
     }
   };
 
-  // Splitting up task time (string -> numbers) then sorting in list by time
-  const compareTasks = (a: ITask, b: ITask) => {
-    const [aHour, aMinute] = a.time.split(":").map(Number);
-    const [bHour, bMinute] = b.time.split(":").map(Number);
+  // Event handler function that compares task times inputed, creating them into Date objects and returning the difference in miliseconds.
+  function compareTasks(a: { time: string }, b: { time: string }): number {
+    const time1 = new Date(`2000-01-01T${a.time}`);
+    const time2 = new Date(`2000-01-01T${b.time}`);
+    return time1.getTime() - time2.getTime();
+  }
 
-    if (aHour < bHour) {
-      return -1;
-    } else if (aHour > bHour) {
-      return 1;
-    } else {
-      if (aMinute < bMinute) {
-        return -1;
-      } else if (aMinute > bMinute) {
-        return 1;
-      } else {
-        return 0;
-      }
-    }
-  };
-
+  // Event handler function that sorts compared task times in the order they are scheduled for.
   const sortedTasks = daily.sort(compareTasks);
 
   return (
